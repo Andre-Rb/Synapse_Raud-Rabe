@@ -31,6 +31,6 @@ public class ClazzServiceImpl implements ClazzService {
     @Override
     public List<Clazz> listClassForRace(long idRace) {
         return clazzDao.listClassForRace(idRace);
-    }
+    }  
 
 }

@@ -1,6 +1,9 @@
 package fr.synapsegaming.user.dao;
 
+import java.util.List;
+
 import fr.synapsegaming.commons.dao.Dao;
+import fr.synapsegaming.user.entity.Clazz;
 import fr.synapsegaming.user.entity.Race;
 
 /**

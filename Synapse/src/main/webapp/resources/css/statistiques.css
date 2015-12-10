@@ -1,0 +1,23 @@
+#stats{    
+	margin-left:auto;
+    margin-right:auto;
+    width:80%;
+}
+
+#topClasses, #topRaces, #topSpecs, #topActifs {
+    width: 410px;
+    display:inline-block;
+    text-align: center;   
+    font-family: 'Segoe UI', sans-serif;
+    margin:50px
+}
+
+#stats div h3{
+	width: 100%;
+    background-image: url('../img/line.png');
+}
+#stats div h3 span{
+    background:#FFF;
+    color:#F00;
+}
+	

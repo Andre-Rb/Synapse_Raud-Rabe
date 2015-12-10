@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.synapsegaming.user.dao.RaceDao;
+import fr.synapsegaming.user.entity.Clazz;
 import fr.synapsegaming.user.entity.Race;
 import fr.synapsegaming.user.service.RaceService;
 

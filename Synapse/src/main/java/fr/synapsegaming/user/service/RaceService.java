@@ -2,6 +2,7 @@ package fr.synapsegaming.user.service;
 
 import java.util.List;
 
+import fr.synapsegaming.user.entity.Clazz;
 import fr.synapsegaming.user.entity.Race;
 
 /**

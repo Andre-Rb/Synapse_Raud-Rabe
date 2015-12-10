@@ -1,0 +1,55 @@
+package fr.synapsegaming.stats.service;
+
+import static org.junit.Assert.*;
+
+import java.util.Date;
+
+import org.apache.commons.collections.CollectionUtils;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import fr.synapsegaming.commons.service.AbstractServiceTest;
+
+public class StatsServiceTest extends AbstractServiceTest {
+	
+	private static final string TOPRACE = "Troll";
+	private static final string TOPACTIF = "Unicorn"
+	
+	@Autowired
+	StatsService statsService;
+	
+	@Test
+	public void testTop5Actifs() {
+		assertTrue(CollectionUtils.isNotEmpty(statsService.top5Actifs()));
+	}
+
+	@Test
+	public void testTop5Races() {
+		assertTrue(CollectionUtils.isNotEmpty(statsService.top5Races()));
+	}
+
+	@Test
+	public void testTop5Classes() {
+		assertTrue(CollectionUtils.isNotEmpty(statsService.top5Classes()));
+	}
+
+	@Test
+	public void testTop5Specs() {
+		assertTrue(CollectionUtils.isNotEmpty(statsService.top5Specialites()));
+	}
+	
+	//Test Faux
+	@Test
+	public void testTopActif() {
+		assertTrue(statsService.top5Actifs().get(0) == TOPACTIF);
+	}
+
+	
+	@Test
+	public void testTopRace() {
+		assertTrue(statsService.top5Races().get(0) == TOPRACE);
+	}
+
+
+}

@@ -2,10 +2,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="springForm"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>Synapse Gaming | Home</title>
+    <title>Synapse Gaming | ${ blog.title }</title>
     <!-- Meta -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- CSS -->
@@ -16,10 +20,7 @@
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/menu.css" />">
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/news.css" />">
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/slider.css" />">
-    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/videos.css" />">
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/blogs.css" />">
-    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/achievement.css" />">
-    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/recruitment.css" />">
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/footer.css" />">
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/statistiques.css" />">
     <!-- JS -->
@@ -40,18 +41,34 @@
 	<div id="news-wrapper">
 		<jsp:include page="portal/News.jsp"/>
 	</div>
-	<div id="videos-wrapper">
-		<jsp:include page="portal/Videos.jsp"/>
-	</div>
-	<div id="middle-wrapper">
-		<div id="middle-container">
-			<jsp:include page="portal/Blogs.jsp"/>
-			<jsp:include page="portal/Recruitment.jsp"/>
-			<jsp:include page="portal/Achievement.jsp"/>
+	<div id="stats">
+		<div id="topClasses">
+			<h3><span>Top Classes</span></h3>
+			<c:forEach items="${top5Classes}" var="classe">
+				<p>${ classe.key.name } : ${ classe.value }</p>
+			</c:forEach>	
+		</div>
+		<div id="topRaces">
+			<h3><span>Top Races</span></h3>
+			<c:forEach items="${top5Races}" var="race">
+				<p>${ race.key.name } : ${ race.value }</p>
+			</c:forEach>	
+		</div>
+		<div id="topSpecs">
+			<h3><span>Top Specialités</span></h3>
+			<c:forEach items="${top5Specs}" var="spec">
+				<p>${ spec.key.name } : ${ spec.value }</p>
+			</c:forEach>	
+		</div>
+		<div id="topActifs">
+			<h3><span>Top Actifs</span></h3>
+			<c:forEach items="${top5Actifs}" var="utilisateur">
+				<p>${ utilisateur.key.name } : ${ utilisateur.value }</p>
+			</c:forEach>	
 		</div>
 	</div>
 	<div id="footer-wrapper">
-		<jsp:include page="portal/Footer.jsp"/>
+		<jsp:include page="portal/Footer.jsp"/>		
 	</div>
 </div>
 </body>
